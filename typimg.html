@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="style.css" rel = "stylesheet">
+  <title>typing</title>
+<script> 
+'use strict';
+
+  let Q = ["apple", "banana", "melon", "mango", "strawberry", "blueberry", "orange"];//問題文
+  
+  let TIME = 30; //制限時間
+  let count = 0; //スコア
+  let miss = 0; //ミス数
+  let state = true; //入力可否
+
+  let Q_No = Math.floor(Math.random() * Q.length);//問題をランダムで出題する
+  let Q_i = 0;//回答初期値・現在単語どこまで合っているか判定している文字番号
+  let Q_l = Q[Q_No].length;//計算用の文字の長さ
+
+
+  window.addEventListener('keypress',keypress_ivent);
+
+  function keypress_ivent(e){
+    if(e.code === 'Space'){
+      start.textContent = Q[Q_No];
+      //制限時間表示
+      const countdown = setInterval(function () {
+        timer.textContent = '制限時間：' + --TIME + '秒';
+        if (TIME <= 0) finish();
+      }, 1000);
+      //終了の処理
+      function finish() {
+        clearInterval(countdown);
+        start.textContent = 'スコアは' + count + 'でした';
+        document.getElementById("miss").innerHTML = 'ミスした回数は' + miss + 'でした';
+        state = false;
+      }
+      //キー取得
+      window.addEventListener("keydown", push_Keydown);
+
+      function push_Keydown(event) {
+
+        let keyCode = event.key;
+        if(TIME === 0){
+          return false;
+        }
+        if (Q_l == Q_l - Q_i) {
+
+          document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l); //問題を書き出す
+        }
+
+        if (Q[Q_No].charAt(Q_i) == keyCode) { //押したキーが合っていたら
+
+          Q_i++; //判定する文章に１足す
+          document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l); //問題を書き出す
+
+          if (Q_l - Q_i === 0) { //全部正解したら
+            Q_No = Math.floor(Math.random() * Q.length);//問題をランダムで出題する
+            Q_i = 0;//回答初期値・現在どこまで合っているか判定している文字番号
+            Q_l = Q[Q_No].length;//計算用の文字の長さ
+            count++;
+            document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l); //新たな問題を書き出す
+
+          }
+        }else{
+          miss++;
+        }
+      }  
+      if (!state) return;
+       
+    }else{
+      return ;
+    }
+  }
+
+  
+  
+</script>
+</head>
+<body>
+  <div id="application" data-shuffle="1" data-loop="1" data-sbl="1" data-pken-score="1" data-pken-judge="1" data-share="1"
+    data-typed="2">
+    <div id="viewNavigator">
+      <div id="actionBar" class="actionBarBasic">
+        <h1 id="applicationTitle">タイピング練習 (JavaScript)</h1>
+  
+  
+  
+        <div id="actionContent" class="botan">
+          <button id="exitButton" class="btn btn--orange btn--radius">終了する</button>
+        </div>
+      </div>
+  
+      <h2 id="timer" class="jikan"></h2>
+      <div class="fashionable-box2">
+        <h1 id="start" class="text">スペースキーを押してスタート</h1>
+      </div>
+      <p id="miss" class="matigai"></p>
+      <h3 id="count"></h3>
+  
+  
+      <div id="fingers">
+        <div class="finger left little"></div>
+        <div class="finger left ring"></div>
+        <div class="finger left middle"></div>
+        <div class="finger left index"></div>
+        <div class="finger thumb"></div>
+        <div class="finger right index"></div>
+        <div class="finger right middle"></div>
+        <div class="finger right little"></div>
+        <div class="finger right ring"></div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

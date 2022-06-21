@@ -1,0 +1,759 @@
+@charset "utf-8";
+
+*:not(input, textarea) {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+@media (max-height:599px) {
+  #application {
+    -webkit-transform: scale(.8);
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform: scale(.8);
+    -moz-transform-origin: 0% 0%;
+    -o-transform: scale(.8);
+    -o-transform-origin: 0% 0%;
+    -ms-transform: scale(.8);
+    -ms-transform-origin: 0% 0%;
+    transform: scale(.8);
+    transform-origin: 0% 0%;
+    width: 960px;
+    height: 600px
+  }
+
+  #views #helpView .viewInner #helpWrapper.simple {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+  }
+
+  #views #helpView .viewInner #helpWrapper.simple .title {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 36px;
+    left: 36px;
+    height: 60px;
+    margin: 0;
+    padding: 16px 0 0;
+    border-bottom: 1px solid #dedede;
+    text-align: center;
+    vertical-align: middle
+  }
+
+  #views #helpView .viewInner #helpWrapper.simple .contents-help {
+    box-sizing: border-box;
+    position: absolute;
+    top: 60px;
+    right: 36px;
+    bottom: 84px;
+    left: 36px;
+    overflow-x: hidden;
+    overflow-y: auto
+  }
+
+  #views #helpView .viewInner #helpWrapper.simple .contents-help .article {
+    margin: 0;
+    padding: 0 24px
+  }
+
+  #views #helpView .viewInner #helpWrapper.simple .nav-help {
+    border-top: 1px solid #dedede;
+    box-sizing: border-box;
+    position: absolute;
+    right: 36px;
+    bottom: 0;
+    left: 36px;
+    height: 84px;
+    margin: 0;
+    padding: 16px 18px 0;
+    text-align: center
+  }
+}
+
+@media (min-height:599px) {
+  #application {
+    width: 100%;
+    height: 100%
+  }
+}
+
+html {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #EEE;
+  overflow: hidden;
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif
+}
+
+img {
+  display: none;
+  position: absolute
+}
+
+.btn--orange,
+a.btn--orange {
+
+  color: #fff;
+  background-color: #eb6100;
+  border: #eb6100;
+  border-radius: 100vh;
+  width: 7.5em;
+  height: 3em;
+  margin-top: 4px;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+
+.botan {
+  text-align: right;
+}
+
+.text {
+  text-align: center;
+}
+
+.jikan {
+  text-align: center;
+  margin: 30px;
+}
+
+.fashionable-box2 {
+  margin: 12em 450px;
+  padding: 1em;
+  background-color: #f1f8e9;
+  border: dashed 3px #aed581;
+  box-shadow: 0 0 0 10px #f1f8e9, 0 0 0 25px #aed581;
+  border-radius: 3px;
+}
+
+.matigai {
+  text-align: center;
+  color: rgb(243, 184, 21);
+  margin: -150px;
+}
+
+
+
+#application {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  color: #424242
+}
+
+#application.home #homeView {
+  display: block
+}
+
+#copyright {
+  display: block;
+  font-size: 9px;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  z-index: 5000;
+  color: #BDBDBD
+}
+
+#viewNavigator {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden
+}
+
+.actionBarBasic {
+  display: block;
+  position: relative;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  background: #bbd6f0;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(97, 97, 97, 0.5);
+  -moz-box-shadow: 0 2px 2px 0 rgba(97, 97, 97, 0.5);
+  box-shadow: 0 2px 2px 0 rgba(97, 97, 97, 0.5)
+}
+
+.actionBarQuiz {
+  display: block;
+  position: relative;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  background: #03A9F4;
+  border-bottom: 1px solid #0288D1;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(97, 97, 97, 0.5);
+  -moz-box-shadow: 0 2px 2px 0 rgba(97, 97, 97, 0.5);
+  box-shadow: 0 2px 2px 0 rgba(97, 97, 97, 0.5)
+}
+
+#applicationTitle {
+  position: absolute;
+  line-height: 1px
+}
+
+#fingers {
+  display: block;
+  position: absolute;
+  top: 600px;
+  left: 350px;
+  width: 740px;
+  height: 260px
+}
+
+.finger {
+  background: transparent url(../img/fingers.png) no-repeat 0 0;
+  width: 60px;
+  height: 130px
+}
+
+.finger.left.index {
+  position: absolute;
+  top: 0;
+  left: 180px;
+  background-position: -180px 0
+}
+
+#fingers.left.index .finger.left.index {
+  background-position: -180px -130px
+}
+
+.finger.left.middle {
+  position: absolute;
+  top: 0;
+  left: 120px;
+  background-position: -120px 0
+}
+
+#fingers.left.middle .finger.left.middle {
+  background-position: -120px -130px
+}
+
+.finger.left.ring {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  background-position: -60px 0
+}
+
+#fingers.left.ring .finger.left.ring {
+  background-position: -60px -130px
+}
+
+.finger.left.little {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: 0 0
+}
+
+#fingers.left.little .finger.left.little,
+#fingers.right.shift .finger.left.little {
+  background-position: 0 -130px
+}
+
+.finger.right.index {
+  position: absolute;
+  top: 0;
+  left: 490px;
+  background-position: -490px 0
+}
+
+#fingers.right.index .finger.right.index {
+  background-position: -490px -130px
+}
+
+.finger.right.middle {
+  position: absolute;
+  top: 0;
+  left: 550px;
+  background-position: -550px 0
+}
+
+#fingers.right.middle .finger.right.middle {
+  background-position: -550px -130px
+}
+
+.finger.right.ring {
+  position: absolute;
+  top: 0;
+  left: 610px;
+  background-position: -610px 0
+}
+
+#fingers.right.ring .finger.right.ring {
+  background-position: -610px -130px
+}
+
+.finger.right.little {
+  position: absolute;
+  top: 0;
+  left: 670px;
+  background-position: -670px 0
+}
+
+#fingers.right.little .finger.right.little,
+#fingers.left.shift .finger.right.little {
+  background-position: -670px -130px
+}
+
+.finger.thumb {
+  width: 250px;
+  position: absolute;
+  top: 0;
+  left: 240px;
+  background-position: -240px 0
+}
+
+#fingers.thumb .finger.thumb {
+  background-position: -240px -130px
+}
+
+#printArea {
+  display: none
+}
+
+#printTitle {
+  margin: 40px 0 0 0;
+  padding: 0;
+  text-align: center;
+  font-size: 38px;
+  box-sizing: border-box;
+  height: 64px;
+  line-height: 64px;
+  color: #4f4f4f
+}
+
+#printTitle small {
+  font-size: 28px
+}
+
+#printContents {
+  margin: 0;
+  padding: 0 2em
+}
+
+#printContents .printLightBox {
+  display: block;
+  background: rgba(236, 239, 241, 0.75);
+  padding: 10px 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  margin-bottom: 30px
+}
+
+#printCaption {
+  margin: 1em 0;
+  font-size: 28px;
+  text-align: center;
+  color: #03A9F4
+}
+
+#printUserName {
+  margin: 1em 0 .2em;
+  font-size: 28px;
+  text-align: center;
+  color: #4f4f4f;
+  padding: 0 10px;
+  text-decoration: underline;
+  text-underline-offset: .2em
+}
+
+#printDate {
+  margin: .2em 0 1em;
+  font-size: 16px;
+  text-align: center;
+  color: #4f4f4f
+}
+
+_::-webkit-full-page-media,
+_:future,
+:root #printBorder {
+  border: solid;
+  border-color: #ababab;
+  height: 250mm;
+  position: absolute;
+  top: 65px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 20px
+}
+
+#printBorder {
+  border: solid;
+  border-color: #ababab;
+  height: 280mm;
+  position: absolute;
+  top: 65px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 20px
+}
+
+_::-webkit-full-page-media,
+_:future,
+:root #printMarkHomeposition {
+  width: 350px;
+  height: 350px;
+  margin-top: 20px
+}
+
+#printMarkHomeposition {
+  width: 400px;
+  height: 400px;
+  margin-top: 30px
+}
+
+_::-webkit-full-page-media,
+_:future,
+:root .printMark {
+  width: 350px;
+  height: 350px;
+  margin-top: 20px
+}
+
+.printMark {
+  width: 400px;
+  height: 400px;
+  margin-top: 30px
+}
+
+_::-webkit-full-page-media,
+_:future,
+:root .overLevel4 {
+  width: 140px;
+  height: 140px;
+  margin-top: -10px
+}
+
+.overLevel4 {
+  width: 240px;
+  height: 240px
+}
+
+_::-webkit-full-page-media,
+_:future,
+:root .underLevel4 {
+  width: 250px;
+  height: 250px
+}
+
+.underLevel4 {
+  width: 350px;
+  height: 350px
+}
+
+_::-webkit-full-page-media,
+_:future,
+:root #printMarkRobo {
+  width: 300px;
+  height: 300px
+}
+
+#printMarkRobo {
+  width: 400px;
+  height: 400px;
+  margin-top: 30px
+}
+
+#printScore {
+  margin: 2em 0 1.5em;
+  text-align: center
+}
+
+#printScore table {
+  margin: 0 auto;
+  padding: 0;
+  width: 332px;
+  border-collapse: collapse
+}
+
+#printScore tr {
+  border-bottom: 1px solid #dedede
+}
+
+#printScore tr.noborder {
+  border-bottom: none
+}
+
+#printScore tr.noborder td,
+#printScore tr.noborder th {
+  padding-bottom: 0
+}
+
+#printScore th,
+#printScore td {
+  margin: 0;
+  padding: 8px 0px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: normal
+}
+
+#printScore th.large,
+#printScore td.large {
+  font-size: 24px
+}
+
+#printScore th.spread2,
+#printScore td.spread2 {
+  letter-spacing: .65em
+}
+
+#printScore th.spread5,
+#printScore td.spread5 {
+  letter-spacing: .35em
+}
+
+#printScore th.label,
+#printScore td.label {
+  width: 126px;
+  padding-left: 16px;
+  text-align: left;
+  color: #0277BD
+}
+
+#printScore th.score,
+#printScore td.score {
+  width: 150px;
+  text-align: right;
+  letter-spacing: .1em;
+  color: #FF6E00
+}
+
+#printScore th.suffix,
+#printScore td.suffix {
+  width: 40px;
+  text-align: center;
+  color: #858585
+}
+
+#printPkenCategory,
+#printPkenOption {
+  display: none
+}
+
+#application[data-pken-judge="1"] #printPkenCategory,
+#application[data-pken-judge="1"] #printPkenOption {
+  display: block
+}
+
+#printPkenCategory {
+  margin: 1em 0;
+  text-align: center
+}
+
+#printPkenCategoryJudge {
+  display: block;
+  width: 382px;
+  height: 60px;
+  background: #E1F5FE;
+  text-align: center;
+  margin: 0 auto;
+  padding: 18px 0;
+  font-size: 18px;
+  line-height: 30px
+}
+
+#printPkenCategoryJudge strong {
+  display: inline-block;
+  color: #0077BD;
+  font-weight: normal
+}
+
+#printPkenCategoryJudge strong span {
+  color: #FF6D00
+}
+
+#printPkenOption {
+  margin: 1em 0
+}
+
+#printPkenOption:after {
+  content: "";
+  clear: both;
+  display: block
+}
+
+#printPkenBasis {
+  display: block;
+  width: 240x;
+  height: 98px;
+  float: left;
+  padding: 1px 10px;
+  background: #F5F5F5;
+  border: 2px solid #F5F5F5
+}
+
+#printPkenBasis table {
+  width: 240px;
+  border-collapse: collapse
+}
+
+#printPkenBasis tr.border {
+  border-bottom: 1px solid #dedede
+}
+
+#printPkenBasis th,
+#printPkenBasis td {
+  margin: 0;
+  padding: 0px;
+  height: 24px;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: normal
+}
+
+#printPkenBasis th.large,
+#printPkenBasis td.large {
+  font-size: 24px
+}
+
+#printPkenBasis th.spread2,
+#printPkenBasis td.spread2 {
+  letter-spacing: .65em
+}
+
+#printPkenBasis th.spread5,
+#printPkenBasis td.spread5 {
+  letter-spacing: .35em
+}
+
+#printPkenBasis th.score,
+#printPkenBasis td.score {
+  width: 70px;
+  padding-left: 10px;
+  text-align: left
+}
+
+#printPkenBasis th.dot,
+#printPkenBasis td.dot {
+  width: 20px;
+  text-align: center;
+  letter-spacing: .1em
+}
+
+#printPkenBasis th.basis,
+#printPkenBasis td.basis {
+  width: 110px;
+  padding-right: 10px;
+  text-align: center
+}
+
+#printDescription {
+  display: block;
+  float: right;
+  width: 48%;
+  font-size: 12px;
+  line-height: 1.5
+}
+
+#printCopyright {
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  padding: 0 0 0 82px;
+  height: 32px;
+  clear: both;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 32px;
+  color: #858585;
+  width: auto
+}
+
+#printCopyright img {
+  float: right
+}
+
+.printImgRight {
+  text-align: right
+}
+
+.printImgCenter {
+  text-align: center
+}
+
+.header-left {
+  float: left
+}
+
+.header-right {
+  float: right
+}
+
+.clear {
+  clear: both
+}
+
+@media print {
+  @page printArea {
+    size: A4 portrait;
+    margin: 10mm 12.7mm
+  }
+
+  #printArea {
+    page: printArea
+  }
+
+  html {
+    size: A4 !important;
+    height: auto
+  }
+
+  body {
+    background: none;
+    size: A4 !important;
+    width: 210mm;
+    height: auto
+  }
+
+  #application.result {
+    zoom: 1;
+    display: block;
+    position: static;
+    box-sizing: border-box;
+    width: auto;
+    height: 850px;
+    background: none;
+    color: #424242;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1)
+  }
+
+  #application.result #viewNavigator {
+    display: none
+  }
+
+  #printArea {
+    display: block
+  }
+}
